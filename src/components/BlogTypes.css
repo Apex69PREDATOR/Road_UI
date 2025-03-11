@@ -1,0 +1,13 @@
+.typeimg button{
+  background-color: white;
+  width: 35%;
+  height: 20%;
+  font-size: 1.2em;
+  color: #0356fc;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  transition: 0.2s ease-in-out;
+}
+.typeimg button:hover{
+    background-color: #0356fc;
+    color: white;
+}

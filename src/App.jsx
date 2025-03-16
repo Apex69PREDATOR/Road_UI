@@ -2,13 +2,15 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
 import Signup from './components/accounts/Signup'
 import Login from './components/accounts/Login'
+import AddBlog from './components/AddBlog'
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
    
 
   const route=createBrowserRouter([{
     path:'/',
-    element:<Home name={name}/>
+    element:<Home />
   },
   {
     path:'/signup',
@@ -17,6 +19,10 @@ function App() {
   {
     path:'/login',
     element:<Login/>
+  },
+  {
+    path:'/addblog',
+    element:<AddBlog/>
   }
 ])
   return <RouterProvider router={route}/>

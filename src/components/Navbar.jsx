@@ -22,7 +22,7 @@ const Navbar = (props) => {
         <li >Institutions</li>
         </ul>    
       {!props.name?<><button onClick={()=>{nav('/signup')}} className='addacount p-3  rounded-[5px] text-white bg-[linear-gradient(120deg,#4287f5,#0c55c9)]  hover:bg-[linear-gradient(120deg,#0c55c9,#4287f5)]'>+ Add Account</button>
-       <button onClick={()=>{nav('/login')}} className='login p-3 ml-[8%] rounded-[5px] text-white bg-[linear-gradient(120deg,#4287f5,#0c55c9)]  hover:bg-[linear-gradient(120deg,#0c55c9,#4287f5)]'>Sign In</button> </>:<><button className='hover:scale-125 p-2 text-white transition-transform duration-200 bg-[#427ef5]'>+ Add Construction</button> <button className='p-2 ml-[5%] hover:text-red-900' onClick={log_out}>Log-out <FontAwesomeIcon icon={faRightFromBracket}/> </button></>}
+       <button onClick={()=>{nav('/login')}} className='login p-3 ml-[8%] rounded-[5px] text-white bg-[linear-gradient(120deg,#4287f5,#0c55c9)]  hover:bg-[linear-gradient(120deg,#0c55c9,#4287f5)]'>Sign In</button> </>:<><button className='hover:scale-125 p-2 text-white transition-transform duration-200 bg-[#427ef5]' onClick={()=>{nav('/addblog')}}>+ Add Construction</button> <button className='p-2 ml-[5%] hover:text-red-900' onClick={log_out}>Log-out <FontAwesomeIcon icon={faRightFromBracket}/> </button></>}
     </nav>
   )
 }

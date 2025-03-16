@@ -7,6 +7,7 @@ import BlogPosts from './BlogPosts'
 import { useEffect,useState } from 'react'
 const Home = () => {
   const [name,get_name]=useState(null)
+  const [uid,get_uid]=useState(null)
   const [load,loading]=useState(true)
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
@@ -18,9 +19,9 @@ const Home = () => {
          }
        })
        const r=await res.json()
-       console.log(r);
        if(res.ok){
          get_name(r.name)
+         get_uid(r.id)
        }
     }
     loading(false)
@@ -36,10 +37,10 @@ const Home = () => {
     <>
     <Navbar name={name}/>
     <BigIntro/>
-    <main className='w-[100%] flex flex-col flex-wrap gap-y-[10vh] items-center'>
+    <main className='w-[100%] flex flex-col bg-[#fcfcfa] flex-wrap gap-y-[10vh] items-center'>
       <BlogTypes/>
       <Division/>
-    <BlogPosts/>
+    <BlogPosts uid={uid}/>
     </main>
     </>
   )

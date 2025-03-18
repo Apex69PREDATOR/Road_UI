@@ -675,10 +675,6 @@ video {
   width: 90%;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -837,6 +833,10 @@ video {
   text-align: center;
 }
 
+.text-end {
+  text-align: end;
+}
+
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -878,6 +878,20 @@ video {
 .text-\[\#00e900\] {
   --tw-text-opacity: 1;
   color: rgb(0 233 0 / var(--tw-text-opacity));
+}
+
+.text-\[\#ed4253\] {
+  --tw-text-opacity: 1;
+  color: rgb(237 66 83 / var(--tw-text-opacity));
+}
+
+.text-\[rgb\(235\2c 233\2c 232\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(235 233 232 / var(--tw-text-opacity));
+}
+
+.text-\[rgb\(235\2c 233\2c 232\2c 0\.7\)\] {
+  color: rgb(235,233,232,0.7);
 }
 
 .text-black {
@@ -958,6 +972,24 @@ video {
 }
 
 .\[\&_\*\:not\(h2\2c button\)\]\:text-xl *:not(h2,button) {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.\[\&_\*\:not\(h2\2c button\2c label\)\]\:rounded *:not(h2,button,label) {
+  border-radius: 0.25rem;
+}
+
+.\[\&_\*\:not\(h2\2c button\2c label\2c p\)\]\:h-\[7\%\] *:not(h2,button,label,p) {
+  height: 7%;
+}
+
+.\[\&_\*\:not\(h2\2c button\2c label\2c p\)\]\:bg-\[\#272727\] *:not(h2,button,label,p) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 39 / var(--tw-bg-opacity));
+}
+
+.\[\&_\*\:not\(h2\2c p\)\]\:text-xl *:not(h2,p) {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }

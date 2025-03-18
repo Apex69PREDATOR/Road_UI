@@ -9,6 +9,8 @@ const Home = () => {
   const [name,get_name]=useState(null)
   const [uid,get_uid]=useState(null)
   const [load,loading]=useState(true)
+  const [type,setType]=useState(null)
+
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
     if(token){
@@ -35,12 +37,12 @@ const Home = () => {
   }
   return (
     <>
-    <Navbar name={name}/>
+    <Navbar name={name} setType={setType}/>
     <BigIntro/>
     <main className='w-[100%] flex flex-col bg-[#fcfcfa] flex-wrap gap-y-[10vh] items-center'>
-      <BlogTypes/>
+      <BlogTypes setType={setType}/>
       <Division/>
-    <BlogPosts uid={uid}/>
+    <BlogPosts uid={uid} type={type}/>
     </main>
     </>
   )

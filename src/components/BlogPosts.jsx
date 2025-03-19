@@ -10,7 +10,7 @@ const BlogPosts = (props) => {
 
   
   const get_blogs=async()=>{
-       const res=await fetch('https://23eb-3-110-46-34.ngrok-free.app/get-blogs',{method:"GET",headers:{
+       const res=await fetch('https://23eb-3-110-46-34.ngrok-free.app/get-blogs',{method:"POST",headers:{
         "Content-type":'application/json',
         "blogtype":props.type
        }})

@@ -4,9 +4,11 @@ import {useNavigate} from 'react-router-dom'
 const AddBlog = () => {
   const nav=useNavigate()
   const [total,updateTotal]=useState(0)
+  const [submitting,isSubmitting]=useState(false)
   const {register,handleSubmit,setError,reset}=useForm()
   
    const onsubmit=async (data)=>{
+    isSubmitting(true)
     if(total>150){
       alert("must not exceed 150 words")
       return
@@ -26,7 +28,7 @@ const AddBlog = () => {
       },body:formData})
       const r=await res.json()
       alert(r.message)
-      
+      isSubmitting(false)
       if(res.ok)
         nav('/')
       
@@ -52,7 +54,7 @@ const AddBlog = () => {
         
         <textarea onKeyDown={(e)=>{updateTotal(e.target.value.length)}}  style={{height:"10%"}} {...register('description',{required:true})} placeholder=' Description of the construction'/>
         <p className={`text-end ${total>150?'text-[#ed4253]':'text-[#00e900]'}`}>total characters : ({total}/150)</p>
-        <button className='bg-[#00e900] text-black h-[10%] w-[60%] rounded'>POST</button>
+        <button className='bg-[#00e900] text-black h-[10%] w-[60%] rounded'>{submitting?'Posting...':'POST'}</button>
         </form>
     </div>
   )

@@ -15,7 +15,7 @@ const Home = () => {
     const token=localStorage.getItem('apexConstruction')
     if(token){
 
-       const res=await fetch("http://localhost:5000/verify/verifyLogin",{method:"POST",headers:
+       const res=await fetch("https://23eb-3-110-46-34.ngrok-free.app/verify/verifyLogin",{method:"POST",headers:
          {
           'Authorization': `Bearer ${token}`
          }

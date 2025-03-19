@@ -6,7 +6,7 @@ const Login = () => {
   const nav=useNavigate()
   const {register,handleSubmit,setError,reset}=useForm()
   const onsubmit=async(data)=>{
-     const res=await fetch('http://localhost:5000/authenticate/login',{method:"POST",headers:{
+     const res=await fetch('http://3.110.46.34:5000/authenticate/login',{method:"POST",headers:{
       "Content-type":'application/json'
      },body:JSON.stringify(data)})
      const r=await res.json()

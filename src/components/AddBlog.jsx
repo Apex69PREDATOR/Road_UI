@@ -21,7 +21,7 @@ const AddBlog = () => {
     formData.append('img_construction',data.img_construction[0])
     console.log("token",token);
     
-      const res=await fetch("http://localhost:5000/post/addBlog",{method:"POST",headers:{
+      const res=await fetch("http://3.110.46.34:5000/post/addBlog",{method:"POST",headers:{
         
           'Authorization': `Bearer ${token}`
          

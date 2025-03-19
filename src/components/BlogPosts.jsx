@@ -10,7 +10,7 @@ const BlogPosts = (props) => {
 
   
   const get_blogs=async()=>{
-       const res=await fetch('http://localhost:5000/get-blogs',{method:"POST",headers:{
+       const res=await fetch('http://3.110.46.34:5000/get-blogs',{method:"POST",headers:{
         "Content-type":'application/json',
         "blogtype":props.type
        }})
@@ -45,7 +45,7 @@ const BlogPosts = (props) => {
     likesData[id]=liked[id]+1
     setLiked(prevLikes=>({...prevLikes,...likesData}))
     
-    const res=await fetch("http://localhost:5000/like/giveLike",{method:"POST",headers:{
+    const res=await fetch("http://3.110.46.34:5000/like/giveLike",{method:"POST",headers:{
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id})})
 

@@ -550,12 +550,12 @@ video {
   left: 0px;
 }
 
-.left-\[2\%\] {
-  left: 2%;
+.left-\[\$\{props\.name\?\'30\%\'\:\'35\%\'\}\] {
+  left: ${props.name?'30%':'35%'};
 }
 
-.left-\[35\%\] {
-  left: 35%;
+.left-\[2\%\] {
+  left: 2%;
 }
 
 .top-0 {
@@ -568,6 +568,34 @@ video {
 
 .top-\[35\%\] {
   top: 35%;
+}
+
+.left-\[\$\{props\.name\?\'30\%\'\:\'30\%\'\}\] {
+  left: ${props.name?'30%':'30%'};
+}
+
+.left-\[\$\{props\.name\?\'20\%\'\:\'35\%\'\}\] {
+  left: ${props.name?'20%':'35%'};
+}
+
+.left-\[\$\{props\.name\?\'20\%\'\:\'\%\'\}\] {
+  left: ${props.name?'20%':'%'};
+}
+
+.left-\[\$\{props\.name\?\'20\%\'\:\'20\%\'\}\] {
+  left: ${props.name?'20%':'20%'};
+}
+
+.left-\[35\%\] {
+  left: 35%;
+}
+
+.left-\[30\%\] {
+  left: 30%;
+}
+
+.left-\[32\%\] {
+  left: 32%;
 }
 
 .z-\[1\] {
@@ -1005,6 +1033,10 @@ video {
 
   .sm\:mr-\[4\%\] {
     margin-right: 4%;
+  }
+
+  .sm\:block {
+    display: block;
   }
 
   .sm\:flex {

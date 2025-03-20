@@ -7,10 +7,12 @@ const BlogPosts = (props) => {
   const [likedarr,setLikedarr]=useState([])
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
+  
+  const HOST="3.110.46.34"
 
   
   const get_blogs=async()=>{
-       const res=await fetch('http://3.110.46.34:5000/get-blogs',{method:"POST",headers:{
+       const res=await fetch(`http://${HOST}:5000/get-blogs`,{method:"POST",headers:{
         "Content-type":'application/json',
         "blogtype":props.type
        }})
@@ -45,7 +47,7 @@ const BlogPosts = (props) => {
     likesData[id]=liked[id]+1
     setLiked(prevLikes=>({...prevLikes,...likesData}))
     
-    const res=await fetch("http://3.110.46.34:5000/like/giveLike",{method:"POST",headers:{
+    const res=await fetch(`http://${HOST}:5000/like/giveLike`,{method:"POST",headers:{
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id})})
 
@@ -63,11 +65,11 @@ const BlogPosts = (props) => {
       <h2 className='text-3xl text-blue'>{message}</h2>
         {blogdata.length?blogdata.map(val=>{
           
-          return <div  className='blog-card bg-white relative flex flex-col justify-between [&_*:not(img,b,span,i)]:ml-[5%] rounded border-black w-[60%] h-[96vh]' id={val._id}>
-            <img src={val.image_url} className='h-[67%] w-[100%]' alt="construction image" />
-           <p className='blog-usrname'> <span className='font-semibold font-sans'> {val.name}</span> <br /> {month[val.date.split('T')[0].split('-')[1]]} {val.date.split('T')[0].split('-')[2]}, {val.date.split('T')[0].split('-')[0]} <span className='text-[0.3em]'>●</span> <span className='p-1 rounded bg-[rgb(66,68,67)] text-white'>{val.timePassed.year>0 && val.timePassed.year +' years'  } {val.timePassed.month>0 && val.timePassed.month +' months'} {val.timePassed.day>0 && val.timePassed.day +' d'} {val.timePassed.hour>0 && val.timePassed.hour +' hr'} {val.timePassed.min>0 && val.timePassed.min +' min'} {(val.timePassed.year==0 && val.timePassed.month==0 && val.timePassed.day==0 && val.timePassed.hour==0 && val.timePassed.min==0)?'just now':'ago'}</span></p>
-           <p className='text-[1.5em] font-semibold b-heading'>{val.location} <br /> 
-           <span className='text-[0.7em] font-normal' ><span className='text-white bg-blue-800 rounded p-1 font-mono'>Type</span> - <span className='font-sans rounded p-1 bg-red-800 text-white'> {val.type}</span></span>
+          return <div  className='blog-card bg-white relative flex flex-col justify-between [&_*:not(img,b,span,i)]:ml-[5%] rounded border-black w-[90%] h-[70vh] md:h-[95vh] md:w-[60%]' id={val._id}>
+            <img src={val.image_url} className='h-[60%] md:h-[67%] w-[100%]' alt="construction image" />
+           <p className='blog-usrname'> <span className='font-semibold font-sans'> {val.name}</span> <br /> {month[val.date.split('T')[0].split('-')[1]]} {val.date.split('T')[0].split('-')[2]}, {val.date.split('T')[0].split('-')[0]} <span className='text-[0.3em]'>●</span> <span className='p-[0.7%] md:p-2 rounded bg-[rgb(66,68,67)] text-white'>{val.timePassed.year>0 && val.timePassed.year +' years'  } {val.timePassed.month>0 && val.timePassed.month +' months'} {val.timePassed.day>0 && val.timePassed.day +' d'} {val.timePassed.hour>0 && val.timePassed.hour +' hr'} {val.timePassed.min>0 && val.timePassed.min +' min'} {(val.timePassed.year==0 && val.timePassed.month==0 && val.timePassed.day==0 && val.timePassed.hour==0 && val.timePassed.min==0)?'just now':'ago'}</span></p>
+           <p className='text-[1.15em] md:text-[1.5em] font-semibold b-heading'>{val.location} <br /> 
+           <span className='text-[0.7em] font-normal' ><span className='text-white bg-blue-800 rounded p-[0.7%] md:p-1 font-mono'>Type</span> - <span className='p-[0.7%] md:p-1 font-sans rounded bg-red-800 text-white'> {val.type}</span></span>
             </p>
            <p>{val.description}</p>
            <div className="likes flex justify-end items-center border-t-[1.2px] border-black h-[6%] w-[90%]">

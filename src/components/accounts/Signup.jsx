@@ -15,7 +15,7 @@ const Signup = () => {
   }
   return (
     <div className='relative bg-black flex justify-center items-center w-[101%] h-[100vh] border-2 border-black'>
-        <form className='rounded-[10px] flex flex-col justify-evenly items-center h-[70%] w-[35%] bg-[#1D1D1D] text-[#00e900] [&_*:not(h2,button)]:bg-[#272727] [&_*:not(h2,button)]:rounded [&_*:not(h2,button)]:w-[60%] [&_*:not(h2,button)]:h-[7%] [&_*:not(h2,button)]:text-xl' onSubmit={handleSubmit(onsubmit)}>
+        <form className='rounded-[10px] flex flex-col justify-evenly items-center md:h-[70%] h-[90%] md:w-[35%] w-[90%] bg-[#1D1D1D] text-[#00e900] [&_*:not(h2,button)]:bg-[#272727] [&_*:not(h2,button)]:rounded [&_*:not(h2,button)]:w-[60%] [&_*:not(h2,button)]:h-[7%] md:[&_*:not(h2)]:text-xl [&_*:not(h2)]:text-l' onSubmit={handleSubmit(onsubmit)}>
           <h2 className='text-3xl'>Sign Up</h2>
         <input type="text"  {...register('fname',{required:true})} placeholder=' First Name' />
         <input type="text" {...register('lname',{required:true})} placeholder=' Last Name' />

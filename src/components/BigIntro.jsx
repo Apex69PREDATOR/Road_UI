@@ -35,13 +35,13 @@ const BigIntro = () => {
   },[])
   return (
     <>
-    <header className='bg-blue-600 relative flex flex-wrap gap-[10%] flex-col items-center justify-center  h-[600px] [&_*:not(h1)]:text-[2em] text-white'>
+    <header className='bg-blue-600 relative flex flex-wrap gap-[10%] flex-col items-center justify-center md:h-[600px] h-[370px] [&_*:not(h1)]:text-[1.1em] md:[&_*:not(h1)]:text-[2em] text-white'>
       <img src={banner} alt="" className='absolute bg-red-500 h-[100%] w-[100%] z-[1]' />
       <div className="sheet absolute bg-black h-[100%] w-[100%] opacity-30 z-[1]"></div>
-      <h1 className='z-[2] text-[4em]  font-bold'>Construction's Blog</h1>
+      <h1 className='z-[2] text-[2em] md:text-[4em]  font-bold'>Construction's Blog</h1>
       <p className='z-[2]'>{know}</p>
     </header>
-    <p className='relative left-[30%] font-semibold my-6 text-center w-[40%]'>{desc}</p>
+    <p className='relative md:left-[30%] text-[0.8em] md:text-[1em] font-semibold my-6 text-center md:w-[40%] w-[100%]'>{desc}</p>
     </>
   )
 }

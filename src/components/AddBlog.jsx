@@ -36,7 +36,7 @@ const AddBlog = () => {
    }
   return (
     <div className='relative   flex justify-center items-center w-[101%] h-[100vh] bg-[#161716]'>
-        <form className='rounded-[10px] flex flex-col justify-evenly items-center h-[80%] w-[60%] bg-[#1D1D1D] text-[#00e900] [&_*:not(h2,button,label,p)]:bg-[#272727] [&_*:not(h2,button,label)]:rounded [&_*:not(h2,button)]:w-[60%] [&_*:not(h2,button,label,p)]:h-[7%] [&_*:not(h2,p)]:text-xl' onSubmit={handleSubmit(onsubmit)}>
+        <form className='rounded-[10px] flex flex-col justify-evenly items-center md:h-[80%] h-[85%] md:w-[60%] w-[85%] bg-[#1D1D1D] text-[#00e900] [&_*:not(h2,button,label,p)]:bg-[#272727] [&_*:not(h2,button,label)]:rounded [&_*:not(h2,button)]:w-[60%] [&_*:not(h2,button,label,p)]:h-[7%] md:[&_*:not(h2,p)]:text-xl [&_*:not(h2,p)]:text-l' onSubmit={handleSubmit(onsubmit)}>
           <h2 className='text-3xl'>Add Constructions</h2>
        
         <input type="text" {...register('location',{required:true})} placeholder=' Location of construction'/>

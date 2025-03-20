@@ -10,12 +10,12 @@ const Home = () => {
   const [uid,get_uid]=useState(null)
   const [load,loading]=useState(true)
   const [type,setType]=useState(null)
-
+  const HOST="3.110.46.34"
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
     if(token){
 
-       const res=await fetch("http://3.110.46.34:5000/verify/verifyLogin",{method:"POST",headers:
+       const res=await fetch(`http://${HOST}:5000/verify/verifyLogin`,{method:"POST",headers:
          {
           'Authorization': `Bearer ${token}`
          }

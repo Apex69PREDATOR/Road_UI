@@ -20,7 +20,7 @@ const Navbar = (props) => {
       <FontAwesomeIcon onClick={()=>{shownav?toggleNav(false):toggleNav(true)}} className='sm:hidden text-xl' icon={faBars}/>
       <Searchbar name={props.name}/>
       <ul className={`sm:flex ${!shownav?'hidden':'flex flex-col top-[100%] backdrop-blur-md bg-white/30 left-0 h-[25vh] '} absolute sm:static  sm:w-[40%] w-[25%] sm:justify-center justify-between items-center p-5 sm:space-x-[7%] [&_*]:cursor-pointer [&_*]:text-l hover:[&_*]:text-[#684CE4]`}>
-        <li  onClick={()=>{updateType(null)}} >Home</li>
+        <li  onClick={()=>{updateType(null)}} >All</li>
         <li onClick={()=>{updateType('Road')}}>Road</li>
         <li onClick={()=>{updateType('Hotels')}}>Hotels</li>
         <li onClick={()=>{updateType('Industries')}}>Industries</li>

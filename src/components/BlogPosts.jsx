@@ -6,6 +6,7 @@ const BlogPosts = (props) => {
   const [liked,setLiked]=useState({})
   const [likedarr,setLikedarr]=useState([])
   const [commentarr,setCommentarr]=useState([])
+  const [comment,showComment]=useState(false)
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
   
@@ -66,7 +67,7 @@ const BlogPosts = (props) => {
       <h2 className='text-3xl text-blue'>{message}</h2>
         {blogdata.length?blogdata.map(val=>{
           
-          return <div  className='blog-card bg-white relative flex flex-col justify-between [&_*:not(img,b,span,i)]:ml-[5%] rounded border-black w-[90%] h-[70vh] md:h-[96vh] md:w-[60%]' id={val._id}>
+          return <><div  className='blog-card bg-white relative flex flex-col justify-between [&_*:not(img,b,span,i)]:ml-[5%] rounded border-black w-[90%] h-[70vh] md:h-[96vh] md:w-[60%]' id={val._id}>
             <img src={val.image_url} className='h-[60%] md:h-[66%] w-[100%]' alt="construction image" />
            <p className='blog-usrname'> <span className='font-semibold font-sans'> {val.name}</span> <br /> {month[val.date.split('T')[0].split('-')[1]]} {val.date.split('T')[0].split('-')[2]}, {val.date.split('T')[0].split('-')[0]} <span className='text-[0.3em]'>●</span> <span className='p-[0.7%] md:p-1 rounded bg-[rgb(66,68,67)] text-white'>{val.timePassed.year>0 && val.timePassed.year +' years'  } {val.timePassed.month>0 && val.timePassed.month +' months'} {val.timePassed.day>0 && val.timePassed.day +' d'} {val.timePassed.hour>0 && val.timePassed.hour +' hr'} {val.timePassed.min>0 && val.timePassed.min +' min'} {(val.timePassed.year==0 && val.timePassed.month==0 && val.timePassed.day==0 && val.timePassed.hour==0 && val.timePassed.min==0)?'just now':'ago'}</span></p>
            <p className='text-[1.15em] md:text-[1.5em] font-semibold b-heading'>{val.location} <br />
@@ -75,12 +76,17 @@ const BlogPosts = (props) => {
             </p>
            <p>{val.description}</p>
            <div className="likes flex justify-around items-center border-t-[1.2px] border-black h-[6%] w-[90%]">
-           <p><i className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
+           <p><i onClick={()=>{comment?showComment(false):showComment(true)}} className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
            <span className='p-2'>{commentarr.length}</span></p>
             <p><span className='p-2'>{liked[val._id]}</span>
            <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
            </div>
+          
           </div>
+          {
+            comment && <div className='comment h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
+           }
+          </>
         }):<p>No Blogs available</p>}
     </section>
   )

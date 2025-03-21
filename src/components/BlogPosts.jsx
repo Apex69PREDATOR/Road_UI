@@ -84,7 +84,7 @@ const BlogPosts = (props) => {
           
           </div>
           {
-            comment && <div className='comment h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
+            comment && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
            }
           </>
         }):<p>No Blogs available</p>}

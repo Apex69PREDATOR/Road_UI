@@ -5,6 +5,7 @@ const BlogPosts = (props) => {
   const [message,setMessage]=useState('')
   const [liked,setLiked]=useState({})
   const [likedarr,setLikedarr]=useState([])
+  const [commentarr,setCommentarr]=useState([])
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
   
@@ -25,11 +26,11 @@ const BlogPosts = (props) => {
 
         if(val.likedBy.includes(props.uid)){
            likedarr.push(val._id)
-           console.log('khb');
            
         }
         
        })
+
        setLiked(prevLikes=>({...prevLikes,...likesData}))
   }
   
@@ -73,9 +74,10 @@ const BlogPosts = (props) => {
            <span className='text-[0.7em] font-normal' ><span className='text-white bg-blue-800 rounded p-[0.7%] md:p-1 font-mono'>Type</span> - <span className='p-[0.7%] md:p-1 font-sans rounded bg-red-800 text-white'> {val.type}</span></span>
             </p>
            <p>{val.description}</p>
-           <div className="likes flex justify-end items-center border-t-[1.2px] border-black h-[6%] w-[90%]">
+           <div className="likes flex justify-around items-center border-t-[1.2px] border-black h-[6%] w-[90%]">
+           <i className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
+           <p>{commentarr.length}</p>
             <p className='p-2'>{liked[val._id]}</p>
-            <i className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
            <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i>
            </div>
           </div>

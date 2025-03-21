@@ -550,10 +550,6 @@ video {
   left: 0px;
 }
 
-.left-\[\$\{props\.name\?\'30\%\'\:\'35\%\'\}\] {
-  left: ${props.name?'30%':'35%'};
-}
-
 .left-\[2\%\] {
   left: 2%;
 }
@@ -568,34 +564,6 @@ video {
 
 .top-\[35\%\] {
   top: 35%;
-}
-
-.left-\[\$\{props\.name\?\'30\%\'\:\'30\%\'\}\] {
-  left: ${props.name?'30%':'30%'};
-}
-
-.left-\[\$\{props\.name\?\'20\%\'\:\'35\%\'\}\] {
-  left: ${props.name?'20%':'35%'};
-}
-
-.left-\[\$\{props\.name\?\'20\%\'\:\'\%\'\}\] {
-  left: ${props.name?'20%':'%'};
-}
-
-.left-\[\$\{props\.name\?\'20\%\'\:\'20\%\'\}\] {
-  left: ${props.name?'20%':'20%'};
-}
-
-.left-\[35\%\] {
-  left: 35%;
-}
-
-.left-\[30\%\] {
-  left: 30%;
-}
-
-.left-\[32\%\] {
-  left: 32%;
 }
 
 .z-\[1\] {
@@ -1099,8 +1067,8 @@ video {
     height: 65%;
   }
 
-  .md\:h-\[67\%\] {
-    height: 67%;
+  .md\:h-\[66\%\] {
+    height: 66%;
   }
 
   .md\:h-\[70\%\] {
@@ -1111,8 +1079,8 @@ video {
     height: 80%;
   }
 
-  .md\:h-\[95vh\] {
-    height: 95vh;
+  .md\:h-\[96vh\] {
+    height: 96vh;
   }
 
   .md\:w-\[35\%\] {
@@ -1133,10 +1101,6 @@ video {
 
   .md\:p-1 {
     padding: 0.25rem;
-  }
-
-  .md\:p-2 {
-    padding: 0.5rem;
   }
 
   .md\:text-\[1\.5em\] {

@@ -69,7 +69,7 @@ const BlogPosts = (props) => {
             <img src={val.image_url} className='h-[60%] md:h-[67%] w-[100%]' alt="construction image" />
            <p className='blog-usrname'> <span className='font-semibold font-sans'> {val.name}</span> <br /> {month[val.date.split('T')[0].split('-')[1]]} {val.date.split('T')[0].split('-')[2]}, {val.date.split('T')[0].split('-')[0]} <span className='text-[0.3em]'>●</span> <span className='p-[0.7%] md:p-2 rounded bg-[rgb(66,68,67)] text-white'>{val.timePassed.year>0 && val.timePassed.year +' years'  } {val.timePassed.month>0 && val.timePassed.month +' months'} {val.timePassed.day>0 && val.timePassed.day +' d'} {val.timePassed.hour>0 && val.timePassed.hour +' hr'} {val.timePassed.min>0 && val.timePassed.min +' min'} {(val.timePassed.year==0 && val.timePassed.month==0 && val.timePassed.day==0 && val.timePassed.hour==0 && val.timePassed.min==0)?'just now':'ago'}</span></p>
            <p className='text-[1.15em] md:text-[1.5em] font-semibold b-heading'>{val.location} <br />
-           <span>Pin : {val.pin}</span> 
+           <span className='text-[0.7em]'>Pin : {val.pin}</span> <br /> 
            <span className='text-[0.7em] font-normal' ><span className='text-white bg-blue-800 rounded p-[0.7%] md:p-1 font-mono'>Type</span> - <span className='p-[0.7%] md:p-1 font-sans rounded bg-red-800 text-white'> {val.type}</span></span>
             </p>
            <p>{val.description}</p>

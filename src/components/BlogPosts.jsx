@@ -6,7 +6,7 @@ const BlogPosts = (props) => {
   const [liked,setLiked]=useState({})
   const [likedarr,setLikedarr]=useState([])
   const [commentarr,setCommentarr]=useState([])
-  const [comment,showComment]=useState(false)
+  const [comment,showComment]=useState({})
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
   
@@ -22,9 +22,10 @@ const BlogPosts = (props) => {
        setBlogdata(posts.allBlogs)
        setMessage(posts.message)
        const likesData={}
+       const cmtarr={}
        posts.allBlogs.forEach(val=>{
         likesData[val._id]=val.likes
-
+        cmtarr[val._id] =false
         if(val.likedBy.includes(props.uid)){
            likedarr.push(val._id)
            
@@ -33,6 +34,7 @@ const BlogPosts = (props) => {
        })
 
        setLiked(prevLikes=>({...prevLikes,...likesData}))
+       showComment(cmtarr)
   }
   
   const update_like=async (id)=>{
@@ -59,6 +61,7 @@ const BlogPosts = (props) => {
     }
 
   }
+  
  useEffect(()=>{
   get_blogs()
  },[props.type])
@@ -76,7 +79,7 @@ const BlogPosts = (props) => {
             </p>
            <p>{val.description}</p>
            <div className="likes flex justify-around items-center border-t-[1.2px] border-black h-[6%] w-[90%]">
-           <p><i onClick={()=>{comment?showComment(false):showComment(true)}} className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
+    <p><i onClick={()=>{showComment(prev=>({...prev,[val._id]:!comment[val._id]}))}} className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
            <span className='p-2'>{commentarr.length}</span></p>
             <p><span className='p-2'>{liked[val._id]}</span>
            <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
@@ -84,7 +87,7 @@ const BlogPosts = (props) => {
           
           </div>
           {
-            comment && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
+            comment[val._id] && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
            }
           </>
         }):<p>No Blogs available</p>}

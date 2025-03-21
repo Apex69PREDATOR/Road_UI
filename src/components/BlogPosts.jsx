@@ -75,10 +75,10 @@ const BlogPosts = (props) => {
             </p>
            <p>{val.description}</p>
            <div className="likes flex justify-around items-center border-t-[1.2px] border-black h-[6%] w-[90%]">
-           <span><i className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
-           <p className='p-2'>{commentarr.length}</p></span>
-            <span><p className='p-2'>{liked[val._id]}</p>
-           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></span>
+           <p><i className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
+           <span className='p-2'>{commentarr.length}</span></p>
+            <p><span className='p-2'>{liked[val._id]}</span>
+           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
            </div>
           </div>
         }):<p>No Blogs available</p>}

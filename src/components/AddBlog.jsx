@@ -19,7 +19,7 @@ const AddBlog = () => {
     formData.append('type',data.type)
     formData.append('description',data.description)
     formData.append('img_construction',data.img_construction[0])
-    console.log("token",token);
+    formData.append('pin',data.pin)
     
       const res=await fetch("http://3.110.46.34:5000/post/addBlog",{method:"POST",headers:{
         
@@ -40,6 +40,7 @@ const AddBlog = () => {
           <h2 className='text-3xl'>Add Constructions</h2>
        
         <input type="text" {...register('location',{required:true})} placeholder=' Location of construction'/>
+        <input type="number" {...register('pin',{required:true})} placeholder=' Pin code'/>
         
         <select className='text-[rgb(235,233,232,0.7)]' {...register('type',{required:true})}>
             <option value="">Select Construction Type</option>

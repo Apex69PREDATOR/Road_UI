@@ -719,6 +719,14 @@ video {
   gap: 10%;
 }
 
+.gap-\[\] {
+  gap: ;
+}
+
+.gap-\[5\%\] {
+  gap: 5%;
+}
+
 .gap-y-\[10vh\] {
   row-gap: 10vh;
 }
@@ -741,6 +749,10 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b-2 {

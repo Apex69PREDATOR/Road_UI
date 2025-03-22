@@ -86,9 +86,9 @@ const BlogPosts = (props) => {
           
           </div>
           {
-            comment[val._id] && <div className='comment relative bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
+            comment[val._id] && <div className='comment flex flex-col justify-center items-center flex-wrap gap-[5%] relative bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div className='flex flex-col h-[20%]'><p>{val.name}</p><p>{val.comment}</p></div>
-            }):<p>No comments till now</p>} <input className='absolute bottom-[5%]' type="text" placeholder='Comment something..' /> </div>
+            }):<p>No comments till now</p>} <input className='absolute border-b-2 border-black bottom-[5%]' type="text" placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

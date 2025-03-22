@@ -546,6 +546,10 @@ video {
   position: sticky;
 }
 
+.bottom-\[5\%\] {
+  bottom: 5%;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -613,6 +617,10 @@ video {
 
 .h-\[10vh\] {
   height: 10vh;
+}
+
+.h-\[20\%\] {
+  height: 20%;
 }
 
 .h-\[20vh\] {

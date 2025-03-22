@@ -671,6 +671,10 @@ video {
   width: 90%;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1083,8 +1087,8 @@ video {
     height: 80%;
   }
 
-  .md\:h-\[96vh\] {
-    height: 96vh;
+  .md\:h-\[97vh\] {
+    height: 97vh;
   }
 
   .md\:w-\[35\%\] {
@@ -1093,6 +1097,10 @@ video {
 
   .md\:w-\[40\%\] {
     width: 40%;
+  }
+
+  .md\:w-\[59\%\] {
+    width: 59%;
   }
 
   .md\:w-\[60\%\] {

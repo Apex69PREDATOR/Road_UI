@@ -788,6 +788,10 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.border-\[\] {
+  border-color: ;
+}
+
 .bg-\[\#00e900\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 233 0 / var(--tw-bg-opacity));

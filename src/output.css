@@ -574,6 +574,14 @@ video {
   top: 35%;
 }
 
+.bottom-\[\%\] {
+  bottom: %;
+}
+
+.bottom-\[2\%\] {
+  bottom: 2%;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -681,6 +689,18 @@ video {
 
 .w-\[95\%\] {
   width: 95%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[70\] {
+  width: 70;
+}
+
+.w-\[70\%\] {
+  width: 70%;
 }
 
 .cursor-pointer {

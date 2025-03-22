@@ -5,7 +5,7 @@ const BlogPosts = (props) => {
   const [message,setMessage]=useState('')
   const [liked,setLiked]=useState({})
   const [likedarr,setLikedarr]=useState([])
-  const [commentarr,setCommentarr]=useState([])
+  const [commentarr,setCommentarr]=useState({})
   const [comment,showComment]=useState({})
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
@@ -22,19 +22,18 @@ const BlogPosts = (props) => {
        setBlogdata(posts.allBlogs)
        setMessage(posts.message)
        const likesData={}
-       const cmtarr={}
+       const cmtobj={}
        posts.allBlogs.forEach(val=>{
         likesData[val._id]=val.likes
-        cmtarr[val._id] =false
+        cmtobj[val._id] =false
         if(val.likedBy.includes(props.uid)){
-           likedarr.push(val._id)
-           
+           likedarr.push(val._id)   
         }
-        
+        commentarr[val._id]=val.CommentedBy
        })
 
        setLiked(prevLikes=>({...prevLikes,...likesData}))
-       showComment(cmtarr)
+       showComment(cmtobj)
   }
   
   const update_like=async (id)=>{
@@ -87,7 +86,9 @@ const BlogPosts = (props) => {
           
           </div>
           {
-            comment[val._id] && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>This is comment</div>
+            comment[val._id] && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id].length>0?commentarr[val._id].map(val=>{
+              return <div className='flex flex-col'><p>{val.name}</p><p>{val.comment}</p></div>
+            }):<p>No comments till now</p>}</div>
            }
           </>
         }):<p>No Blogs available</p>}

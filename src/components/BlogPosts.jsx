@@ -86,7 +86,7 @@ const BlogPosts = (props) => {
           
           </div>
           {
-            comment[val._id] && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id].length>0?commentarr[val._id].map(val=>{
+            comment[val._id] && <div className='comment bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div className='flex flex-col'><p>{val.name}</p><p>{val.comment}</p></div>
             }):<p>No comments till now</p>}</div>
            }

@@ -792,6 +792,14 @@ video {
   border-color: ;
 }
 
+.border-\[rgb\(0\2c 0\2c 0\2c 0\.\)\] {
+  border-color: rgb(0,0,0,0.);
+}
+
+.border-\[rgb\(0\2c 0\2c 0\2c 0\.5\)\] {
+  border-color: rgb(0,0,0,0.5);
+}
+
 .bg-\[\#00e900\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 233 0 / var(--tw-bg-opacity));

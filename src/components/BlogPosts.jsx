@@ -68,7 +68,7 @@ const BlogPosts = (props) => {
     const res=await fetch(`http://${HOST}:5000/comment/giveComment`,{method:"POST",headers:{
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id,comment:value,name:props.name})})
-    const r=await res.json()
+    const r=await res.text()
     console.log(r);
     
     }

@@ -96,7 +96,7 @@ const BlogPosts = (props) => {
     <p><i onClick={()=>{showComment(prev=>({...prev,[val._id]:!comment[val._id]}))}} className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
            <span className='p-2'>{commentarr[val._id]?commentarr[val._id].length:0}</span></p>
             <p><span className='p-2'>{liked[val._id]}</span>
-           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
+           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.parentElement.firstElementChild.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
            </div>
           
           </div>

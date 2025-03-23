@@ -62,7 +62,8 @@ const BlogPosts = (props) => {
   }
   async function give_comment(){
     console.log(cmtbox.current.value);
-    
+    cmtbox.current.value=''
+    cmtbox.current.blur
   }
  useEffect(()=>{
   get_blogs()

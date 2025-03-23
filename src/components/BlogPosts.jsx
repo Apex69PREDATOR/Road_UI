@@ -96,14 +96,14 @@ const BlogPosts = (props) => {
     <p><i onClick={()=>{showComment(prev=>({...prev,[val._id]:!comment[val._id]}))}} className='fa-regular fa-comment text-2xl cursor-pointer hover:scale-125 transition-transform duration-200'></i>
            <span className='p-2'>{commentarr[val._id]?commentarr[val._id].length:0}</span></p>
             <p><span className='p-2'>{liked[val._id]}</span>
-           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.parentElement.firstElementChild.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
+           <i onClick={(e)=>{update_like(e.target.parentElement.parentElement.parentElement.id)}} className={`fa-${likedarr.includes(val._id)?'solid':'regular'} fa-heart text-2xl cursor-pointer hover:scale-125 transition-transform duration-200 text-red-500`} ></i></p>
            </div>
           
           </div>
           {
             comment[val._id] && <div className='comment flex flex-col justify-center items-center flex-wrap gap-[5%] relative bg-white rounded h-[30vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div id={val.uid} className='flex flex-col h-[20%]'><p>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.parentElement.id)}} placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.parentElement.firstElementChild.id)}} placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

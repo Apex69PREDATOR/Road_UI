@@ -42,7 +42,7 @@ const Home = () => {
     <main className='w-[100%] flex flex-col bg-[#fcfcfa] flex-wrap gap-y-[10vh] items-center'>
       <BlogTypes setType={setType}/>
       <Division/>
-    <BlogPosts uid={uid} type={type}/>
+    <BlogPosts uid={uid} type={type} name={name}/>
     </main>
     </>
   )

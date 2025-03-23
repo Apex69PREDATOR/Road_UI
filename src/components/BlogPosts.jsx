@@ -60,12 +60,17 @@ const BlogPosts = (props) => {
     }
 
   }
-  async function give_comment(){
+  async function give_comment(value,id){
     if(props.uid && localStorage.getItem("apexConstruction")){
     console.log(cmtbox.current.value);
     cmtbox.current.value=''
     cmtbox.current.blur()
-    return
+    const res=await fetch(`http://${HOST}:5000/like/giveLike`,{method:"POST",headers:{
+      "Content-type":'application/json'
+    },body:JSON.stringify({uid:props.uid,bid:id,comment:value,name:props.name})})
+    const r=await res.json()
+    console.log(r);
+    
     }
     alert('Please sign in again to comment')
   }
@@ -96,7 +101,7 @@ const BlogPosts = (props) => {
           {
             comment[val._id] && <div className='comment flex flex-col justify-center items-center flex-wrap gap-[5%] relative bg-white rounded h-[30vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div className='flex flex-col h-[20%]'><p>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment()}} placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.parentElement.id)}} placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

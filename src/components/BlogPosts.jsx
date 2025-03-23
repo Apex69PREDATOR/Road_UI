@@ -1,4 +1,4 @@
-import {React,useEffect,useState} from 'react'
+import {React,useEffect,useState,useRef} from 'react'
 import "./blogposts.css"
 const BlogPosts = (props) => {
   const [blogdata,setBlogdata]=useState([])
@@ -11,7 +11,7 @@ const BlogPosts = (props) => {
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
   
   const HOST="3.110.46.34"
-
+  const cmtbox=useRef()
   
   const get_blogs=async()=>{
        const res=await fetch(`http://${HOST}:5000/get-blogs`,{method:"POST",headers:{
@@ -88,7 +88,7 @@ const BlogPosts = (props) => {
           {
             comment[val._id] && <div className='comment flex flex-col justify-center items-center flex-wrap gap-[5%] relative bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div className='flex flex-col h-[20%]'><p>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' type="text" placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

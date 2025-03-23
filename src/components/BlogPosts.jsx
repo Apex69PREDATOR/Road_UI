@@ -60,7 +60,10 @@ const BlogPosts = (props) => {
     }
 
   }
-  
+  async function give_comment(){
+    console.log(cmtbox.current.value);
+    
+  }
  useEffect(()=>{
   get_blogs()
  },[props.type])
@@ -88,7 +91,7 @@ const BlogPosts = (props) => {
           {
             comment[val._id] && <div className='comment flex flex-col justify-center items-center flex-wrap gap-[5%] relative bg-white rounded h-[20vh] w-[90%] md:w-[60%]'>{commentarr[val._id]?commentarr[val._id].map(val=>{
               return <div className='flex flex-col h-[20%]'><p>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyDown={(e)=>{e.target.blur}} placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyDownChange={(e)=>{e.target.key=='Enter' && give_comment()}} placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

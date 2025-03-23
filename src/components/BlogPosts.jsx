@@ -69,10 +69,8 @@ const BlogPosts = (props) => {
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id,comment:value,uname:props.name})})
     console.log('bid',id);
-    console.log(res);
 
     const r=await res.text()
-    console.log(r);
     if(res.ok)
       return
     }

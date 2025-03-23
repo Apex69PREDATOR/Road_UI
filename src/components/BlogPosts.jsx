@@ -61,9 +61,13 @@ const BlogPosts = (props) => {
 
   }
   async function give_comment(){
+    if(props.uid && localStorage.getItem("apexConstruction")){
     console.log(cmtbox.current.value);
     cmtbox.current.value=''
     cmtbox.current.blur()
+    return
+    }
+    alert('Please sign in again to comment')
   }
  useEffect(()=>{
   get_blogs()

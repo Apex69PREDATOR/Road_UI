@@ -67,7 +67,7 @@ const BlogPosts = (props) => {
     cmtbox.current.blur()
     const res=await fetch(`http://${HOST}:5000/comment/givecomment`,{method:"POST",headers:{
       "Content-type":'application/json'
-    },body:JSON.stringify({uid:props.uid,bid:id,comment:value,name:props.name})})
+    },body:JSON.stringify({uid:props.uid,bid:id,comment:value,uname:props.name})})
     console.log('bid',id);
     console.log(res);
     

@@ -767,6 +767,10 @@ video {
   row-gap: 5vh;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }

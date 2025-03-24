@@ -591,6 +591,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.ml-\[5\%\] {
+  margin-left: 5%;
+}
+
 .flex {
   display: flex;
 }
@@ -709,6 +713,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1271,6 +1279,10 @@ video {
 
 .\[\&_\*\:not\(img\2c button\)\]\:w-\[33\%\] *:not(img,button) {
   width: 33%;
+}
+
+.\[\&_\*\]\:ml-\[5\%\] * {
+  margin-left: 5%;
 }
 
 .\[\&_\*\]\:cursor-pointer * {

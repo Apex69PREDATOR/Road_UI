@@ -104,7 +104,7 @@ const BlogPosts = (props) => {
           {
             comment[val._id] && <div className='comment overflow-scroll flex flex-col justify-start items-start gap-[5%] [&_*]:ml-[5%] relative bg-white rounded h-[30vh] w-[90%] md:w-[60%]'>{commentarr[val._id].length?commentarr[val._id].map(val=>{
               return <div id={val.uid} className='flex bg-[#f7f7f7]  mt-[0.6%] rounded p-2 flex-col h-[20%] w-[80%]'><p className='font-semibold text-[0.75em]'>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='absolute w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.previousSibling.id)}} placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='fixed w-[70%] border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.previousSibling.id)}} placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

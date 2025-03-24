@@ -578,6 +578,10 @@ video {
   top: 35%;
 }
 
+.left-\[5\%\] {
+  left: 5%;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -769,6 +773,10 @@ video {
 
 .gap-y-\[5vh\] {
   row-gap: 5vh;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-scroll {

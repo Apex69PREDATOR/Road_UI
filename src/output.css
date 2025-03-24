@@ -862,6 +862,11 @@ video {
   background-color: rgb(255 255 255 / 0.3);
 }
 
+.bg-\[\#f2f2f2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
 .bg-\[linear-gradient\(120deg\2c \#4287f5\2c \#0c55c9\)\] {
   background-image: linear-gradient(120deg,#4287f5,#0c55c9);
 }

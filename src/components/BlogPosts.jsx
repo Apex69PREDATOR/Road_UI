@@ -71,7 +71,7 @@ const BlogPosts = (props) => {
 
     const r=await res.json()
     if(res.ok)
-      setCommentarr(prevCmt=>({...prevCmt,id:{uid:props.uid,name:props.name,comment:props.comment}}))
+      setCommentarr(prevCmt=>({...prevCmt,[id]:{uid:props.uid,name:props.name,comment:props.comment}}))
       return
     }
     

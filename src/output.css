@@ -591,6 +591,14 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[1\%\] {
+  margin-top: 1%;
+}
+
 .flex {
   display: flex;
 }
@@ -865,6 +873,11 @@ video {
 .bg-\[\#f2f2f2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#f7f7f7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 247 247 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(120deg\2c \#4287f5\2c \#0c55c9\)\] {

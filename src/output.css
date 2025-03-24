@@ -972,6 +972,14 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\] {
+  color: ;
+}
+
+.text-\[0\.\] {
+  color: 0.;
+}
+
 .opacity-30 {
   opacity: 0.3;
 }

@@ -70,9 +70,11 @@ const BlogPosts = (props) => {
     },body:JSON.stringify({uid:props.uid,bid:id,comment:value,uname:props.name})})
 
     const r=await res.json()
-    if(res.ok)
-      setCommentarr(prevCmt=>({...prevCmt,[id]:{uid:props.uid,name:props.name,comment:props.comment}}))
+    if(res.ok){
+      commentarr[id].push({uid:props.uid,name:props.name,comment:props.comment})
+      setCommentarr(prevCmt=>({...prevCmt,[id]:commentarr[id]}))
       return
+    }
     }
     
      alert('Please sign in again to comment')
@@ -104,7 +106,7 @@ const BlogPosts = (props) => {
           {
             comment[val._id] && <div className='comment overflow-auto flex flex-col justify-start items-start gap-[5%] [&_*]:ml-[5%] relative bg-white rounded h-[30vh] w-[90%] md:w-[60%]'>{commentarr[val._id].length?commentarr[val._id].map(val=>{
               return <div id={val.uid} className='flex bg-[#f7f7f7]  mt-[0.6%] rounded p-2 flex-col h-[24%] justify-evenly w-[80%]'><p className='font-semibold text-[0.75em]'>{val.name}</p><p>{val.comment}</p></div>
-            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='sticky w-[80%] rounded p-2 border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%] left-[5%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.previousSibling.id)}} placeholder='Comment something..' /> </div>
+            }):<p style={{opacity:"0.5"}}>No comments till now</p>} <input className='sticky w-[80%] rounded border-b-2 border-[rgb(0,0,0,0.6)] bottom-[2%] left-[5%]' ref={cmtbox} type="text" onKeyPress={(e)=>{e.key=='Enter' && give_comment(e.target.value,e.target.parentElement.previousSibling.id)}} placeholder='Comment something..' /> </div>
            }
           </>
         }):<p>No Blogs available</p>}

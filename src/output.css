@@ -582,6 +582,10 @@ video {
   left: 5%;
 }
 
+.bottom-\[0\%\] {
+  bottom: 0%;
+}
+
 .z-\[1\] {
   z-index: 1;
 }

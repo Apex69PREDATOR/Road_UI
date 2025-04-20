@@ -10,7 +10,7 @@ const Home = () => {
   const [uid,get_uid]=useState(null)
   const [load,loading]=useState(true)
   const [type,setType]=useState(null)
-  const HOST="3.110.46.34"
+  const HOST="3.110.50.139"
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
     if(token){

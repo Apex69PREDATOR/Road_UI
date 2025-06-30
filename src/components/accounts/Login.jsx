@@ -6,7 +6,7 @@ const Login = () => {
   const [submit,submitting]=useState(false)
   const nav=useNavigate()
   const {register,handleSubmit,setError,reset}=useForm()
-  const HOST="3.110.50.139"
+  const HOST="13.60.43.155"
   const onsubmit=async(data)=>{
     submitting(true)
      const res=await fetch(`http://${HOST}:5000/authenticate/login`,{method:"POST",headers:{

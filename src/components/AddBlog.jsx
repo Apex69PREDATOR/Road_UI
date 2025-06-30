@@ -6,7 +6,7 @@ const AddBlog = () => {
   const [total,updateTotal]=useState(0)
   const [submitting,isSubmitting]=useState(false)
   const {register,handleSubmit,setError,reset}=useForm()
-  const HOST="3.110.50.139"
+  const HOST="13.60.43.155"
    const onsubmit=async (data)=>{
     isSubmitting(true)
     if(total>150){

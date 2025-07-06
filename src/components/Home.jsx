@@ -11,7 +11,7 @@ const Home = () => {
   const [load,loading]=useState(true)
   const [type,setType]=useState(null)
   const [authDone,setAuthDone]=useState(false)
-  const HOST="13.60.43.155"
+  const HOST="13.60.104.47"
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
     if(token){

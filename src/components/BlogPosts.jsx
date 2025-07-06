@@ -10,7 +10,7 @@ const BlogPosts = (props) => {
 
   const month={'01':"Jan",'02':"Feb","03":"Mar","04":"Apr","05":"May","06":"Jun","07":"Jul","08":"aug","09":"sep","010":"Oct","011":"Nov","012":"Dec"}
   
-  const HOST="13.60.43.155"
+  const HOST="13.60.104.47"
   const cmtbox=useRef()
   
   const get_blogs=async()=>{

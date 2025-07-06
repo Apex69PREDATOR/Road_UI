@@ -10,6 +10,7 @@ const Home = () => {
   const [uid,get_uid]=useState(null)
   const [load,loading]=useState(true)
   const [type,setType]=useState(null)
+  const [authDone,setAuthDone]=useState(false)
   const HOST="13.60.43.155"
   async function check_login(){
     const token=localStorage.getItem('apexConstruction')
@@ -24,12 +25,13 @@ const Home = () => {
        if(res.ok){
          get_name(r.name)
          get_uid(r.id)
+         setAuthDone(true)
        }
     }
     loading(false)
   }
   useEffect(()=>{
-   check_login()
+  !authDone && check_login()
   },[])
 
   if(load){
@@ -41,7 +43,7 @@ const Home = () => {
     <BigIntro/>
     <main className='w-[100%] flex flex-col bg-[#fcfcfa] flex-wrap gap-y-[10vh] items-center'>
       <BlogTypes setType={setType}/>
-      <Division/>
+      <Division authDone={authDone} />
     <BlogPosts uid={uid} type={type} name={name}/>
     </main>
     </>

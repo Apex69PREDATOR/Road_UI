@@ -13,10 +13,10 @@ const Home = () => {
   const [authDone,setAuthDone]=useState(false)
   const HOST="13.60.104.47"
   async function check_login(){
-    const token=localStorage.getItem('apexConstruction')
+    const token=localStorage.getItem(import.meta.env.VITE_TOKEN_ID)
     if(token){
 
-       const res=await fetch(`http://${HOST}:5000/verify/verifyLogin`,{method:"POST",headers:
+       const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/verify/verifyLogin`,{method:"POST",headers:
          {
           'Authorization': `Bearer ${token}`
          }

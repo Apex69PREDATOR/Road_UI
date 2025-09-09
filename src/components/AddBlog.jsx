@@ -21,7 +21,7 @@ const AddBlog = () => {
     formData.append('img_construction',data.img_construction[0])
     formData.append('pin',data.pin)
     
-      const res=await fetch(`http://${HOST}:5000/post/addBlog`,{method:"POST",headers:{
+      const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/post/addBlog`,{method:"POST",headers:{
         
           'Authorization': `Bearer ${token}`
          

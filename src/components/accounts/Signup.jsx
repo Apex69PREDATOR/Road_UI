@@ -10,12 +10,12 @@ const Signup = () => {
   const HOST="13.60.104.47"
   const onsubmit=async(data)=>{
     submitting(true)
-     const res=await fetch(`http://${HOST}:5000/account/signup`,{method:"POST",headers:{
+     const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/account/signup`,{method:"POST",headers:{
       "Content-type":'application/json'
      },body:JSON.stringify(data)})
      const r=await res.json()
      alert(r.message)
-     r.success && nav('/') && localStorage.setItem('apexConstruction',r.token)
+     r.success && nav('/') && localStorage.setItem(import.meta.env.VITE_TOKEN_ID,r.token)
     submitting(false)
   }
   return (

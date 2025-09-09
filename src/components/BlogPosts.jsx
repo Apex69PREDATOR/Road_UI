@@ -14,7 +14,7 @@ const BlogPosts = (props) => {
   const cmtbox=useRef()
   
   const get_blogs=async()=>{
-       const res=await fetch(`http://${HOST}:5000/get-blogs`,{method:"POST",headers:{
+       const res=await fetch(`import.meta.env.VITE_SERVER_URL/get-blogs`,{method:"POST",headers:{
         "Content-type":'application/json',
         "blogtype":props.type
        }})
@@ -50,7 +50,7 @@ const BlogPosts = (props) => {
     likesData[id]=liked[id]+1
     setLiked(prevLikes=>({...prevLikes,...likesData}))
     
-    const res=await fetch(`http://${HOST}:5000/like/giveLike`,{method:"POST",headers:{
+    const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/like/giveLike`,{method:"POST",headers:{
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id})})
 
@@ -65,7 +65,7 @@ const BlogPosts = (props) => {
     console.log(cmtbox.current.value);
     cmtbox.current.value=''
     cmtbox.current.blur()
-    const res=await fetch(`http://${HOST}:5000/comment/givecomment`,{method:"POST",headers:{
+    const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/comment/givecomment`,{method:"POST",headers:{
       "Content-type":'application/json'
     },body:JSON.stringify({uid:props.uid,bid:id,comment:value,uname:props.name})})
 

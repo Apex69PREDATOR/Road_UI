@@ -14,7 +14,7 @@ const BlogPosts = (props) => {
   const cmtbox=useRef()
   
   const get_blogs=async()=>{
-       const res=await fetch(`import.meta.env.VITE_SERVER_URL/get-blogs`,{method:"POST",headers:{
+       const res=await fetch(`${import.meta.env.VITE_SERVER_URL}/get-blogs`,{method:"POST",headers:{
         "Content-type":'application/json',
         "blogtype":props.type
        }})
